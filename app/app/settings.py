@@ -155,7 +155,7 @@ JWT_AUTH = {
     'JWT_DECODE_HANDLER':
         'auth0authorization.utils.jwt_decode_token',
     'JWT_ALGORITHM': 'RS256',
-    'JWT_AUDIENCE': 'https://rsal.auth0.com/api/v2/',
+    'JWT_AUDIENCE': 'https://quickstarts/api',
     'JWT_ISSUER': 'https://rsal.auth0.com/',
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
 }

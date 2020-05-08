@@ -7,6 +7,9 @@ import jwt
 import requests
 
 
+API_AUDIENCE = 'https://quickstarts/api'
+
+
 def jwt_get_username_from_payload_handler(payload):
     username = payload.get('sub').replace('|', '.')
     authenticate(remote_user=username)
@@ -24,4 +27,4 @@ def jwt_decode_token(token):
         raise Exception('Public key not found.')
 
     issuer = 'https://{}/'.format('rsal.auth0.com')
-    return jwt.decode(token, public_key, audience='YOUR_API_IDENTIFIER', issuer=issuer, algorithms=['RS256'])
+    return jwt.decode(token, public_key, audience=API_AUDIENCE, issuer=issuer, algorithms=['RS256'])
